@@ -1,12 +1,12 @@
-button {
+/* button {
   display: block;
   width: 100%;
   padding: 8px 0;
-  margin: 8px auto
-}
+  margin: 8px auto;
+} */
 
 p {
-  border-bottom: 1px dashed #ddd
+  border-bottom: 1px dashed #ddd;
 }
 
 #pictureUrl {
@@ -27,7 +27,13 @@ p {
   border-radius: 100px;
 }
 
-#accessToken, #utouId {
+#accessToken,
+#utouId {
   display: block;
-  overflow: auto
+  overflow: auto;
+}
+
+.btn {
+  background: #18191a;
+  color: white;
 }
