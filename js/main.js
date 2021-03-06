@@ -1,6 +1,19 @@
 function createUniversalLink() {}
 
-async function shareMsg() {}
+async function shareMsg() {
+  await liff.shareTargetPicker([
+    {
+      type: "text",
+      text:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, assumenda!",
+    },
+    {
+      type: "sticker",
+      stickerId: 52114115,
+      packageId: 11539,
+    },
+  ]);
+}
 
 function logOut() {
   liff.logout();
@@ -15,9 +28,7 @@ async function scanCode() {
   const result = await liff.scanCode();
 
   document.getElementById("scanCode").append(result.value);
-  alert(result.value).then(() => {
-    liff.closeWindow();
-  });
+  alert(result.value);
 }
 
 function openWindow() {
