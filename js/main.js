@@ -8,7 +8,12 @@ function closed() {}
 
 async function scanCode() {}
 
-function openWindow() {}
+function openWindow() {
+  liff.openWindow({
+    url: "https://www.facebook.com/tinngrits77",
+    external: true,
+  });
+}
 
 async function getFriendship() {
   const friend = await liff.getFriendship();
