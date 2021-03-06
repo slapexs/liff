@@ -2,7 +2,10 @@ function createUniversalLink() {}
 
 async function shareMsg() {}
 
-function logOut() {}
+function logOut() {
+  liff.logout();
+  window.location.reload();
+}
 
 function closed() {
   liff.closeWindow();
@@ -94,6 +97,8 @@ async function main() {
     getContext();
     getFriendship();
     // createUniversalLink()
+  } else {
+    liff.login();
   }
 }
 main();
