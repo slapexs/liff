@@ -10,7 +10,16 @@ async function scanCode() {}
 
 function openWindow() {}
 
-async function getFriendship() {}
+async function getFriendship() {
+  const friend = await liff.getFriendship();
+  document.getElementById("friendship").append(friend.friendFlag);
+
+  if (!friend.friendFlag) {
+    if (confirm("กรุณาเพื่อม Chat bot เป็นเพื่อนก่อนนะครับ")) {
+      window.location = "https://line.me/R/ti/p/@429jicxz";
+    }
+  }
+}
 
 async function sendMsg() {
   if (liff.getContext().type !== "none") {
@@ -65,7 +74,7 @@ async function main() {
   getEnvironment();
   getUserProfile();
   getContext();
-  // getFriendship()
+  getFriendship();
   // createUniversalLink()
 }
 main();
