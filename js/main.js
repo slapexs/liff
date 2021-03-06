@@ -23,6 +23,9 @@ async function getUserProfile() {
   document.getElementById("userId").append(profile.userId);
   document.getElementById("statusMessage").append(profile.statusMessage);
   document.getElementById("displayName").append(profile.displayName);
+  document
+    .getElementById("decodedIDToken")
+    .append(liff.getDecodedIDToken().email);
 }
 
 function getEnvironment() {
@@ -31,7 +34,6 @@ function getEnvironment() {
   document.getElementById("version").append(liff.getVersion());
   document.getElementById("accessToken").append(liff.getAccessToken());
   document.getElementById("isInClient").append(liff.isInClient());
-
   if (liff.isInClient()) {
     document.getElementById("btnLogOut").style.display = "none";
   } else {
