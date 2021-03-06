@@ -14,7 +14,13 @@ async function getFriendship() {}
 
 async function sendMsg() {}
 
-function getContext() {}
+function getContext() {
+  document.getElementById("type").append(liff.getContext().type);
+  document.getElementById("viewType").append(liff.getContext().viewType);
+  document.getElementById("utouId").append(liff.getContext().utouId);
+  document.getElementById("roomId").append(liff.getContext().roomId);
+  document.getElementById("groupId").append(liff.getContext().groupId);
+}
 
 async function getUserProfile() {
   const profile = await liff.getProfile();
@@ -47,7 +53,7 @@ async function main() {
   await liff.init({ liffId: "1655727309-omPOymaV" });
   getEnvironment();
   getUserProfile();
-  // getContext()
+  getContext();
   // getFriendship()
   // createUniversalLink()
 }
