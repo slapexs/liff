@@ -30,7 +30,7 @@ function getEnvironment() {
   document.getElementById("language").append(liff.getLanguage());
   document.getElementById("version").append(liff.getVersion());
   document.getElementById("accessToken").append(liff.getAccessToken());
-  document.getElementById("isInClient").append(liff.getisInClient());
+  document.getElementById("isInClient").append(liff.isInClient());
 
   if (liff.isInClient()) {
     document.getElementById("btnLogOut").style.display = "none";
