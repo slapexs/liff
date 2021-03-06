@@ -4,12 +4,17 @@ async function shareMsg() {}
 
 function logOut() {}
 
-function closed() {}
+function closed() {
+  liff.closeWindow();
+}
 
 async function scanCode() {
   const result = await liff.scanCode();
 
   document.getElementById("scanCode").append(result.value);
+  alert(result.value).then(() => {
+    liff.closeWindow();
+  });
 }
 
 function openWindow() {
