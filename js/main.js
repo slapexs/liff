@@ -42,7 +42,7 @@ function getEnvironment() {
 }
 
 async function main() {
-  await liff.init({ liffId: "1655727203-kd8PQ0M5" });
+  await liff.init({ liffId: "1655727309-omPOymaV" });
   getEnvironment();
   getUserProfile();
   // getContext()
