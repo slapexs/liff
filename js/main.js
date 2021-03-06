@@ -1,18 +1,29 @@
-function createUniversalLink() {}
+function createUniversalLink() {
+  const link1 = liff.permanentLink.createUrl();
+  document.getElementById("universalLink1").append(link1);
+
+  liff.permanentLink.setExtraQueryParam("param=9");
+  const link2 = liff.permanentLink.createUrl();
+  document.getElementById("universalLink2").append(link2);
+}
 
 async function shareMsg() {
-  await liff.shareTargetPicker([
-    {
-      type: "text",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, assumenda!",
-    },
-    {
-      type: "sticker",
-      stickerId: 52114115,
-      packageId: 11539,
-    },
-  ]);
+  await liff
+    .shareTargetPicker([
+      {
+        type: "text",
+        text:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, assumenda!",
+      },
+      {
+        type: "sticker",
+        stickerId: 52114115,
+        packageId: 11539,
+      },
+    ])
+    .then(() => {
+      liff.closeWindow();
+    });
 }
 
 function logOut() {
@@ -107,7 +118,7 @@ async function main() {
     getUserProfile();
     getContext();
     getFriendship();
-    // createUniversalLink()
+    createUniversalLink();
   } else {
     liff.login();
   }
