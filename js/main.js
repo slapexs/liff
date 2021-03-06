@@ -85,10 +85,15 @@ function getEnvironment() {
 
 async function main() {
   await liff.init({ liffId: "1655727309-omPOymaV" });
-  getEnvironment();
-  getUserProfile();
-  getContext();
-  getFriendship();
-  // createUniversalLink()
+
+  document.getElementById("isLoggedIn").append(liff.isLoggedIn());
+
+  if (liff.isLoggedIn()) {
+    getEnvironment();
+    getUserProfile();
+    getContext();
+    getFriendship();
+    // createUniversalLink()
+  }
 }
 main();
