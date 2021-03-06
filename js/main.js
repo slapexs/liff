@@ -12,7 +12,18 @@ function openWindow() {}
 
 async function getFriendship() {}
 
-async function sendMsg() {}
+async function sendMsg() {
+  if (liff.getContext().type !== "none") {
+    await liff.sendMessages([
+      {
+        type: "sticker",
+        stickerId: 51626494,
+        packageId: 11538,
+      },
+    ]);
+    alert("ส่งข้อความแล้ว");
+  }
+}
 
 function getContext() {
   document.getElementById("type").append(liff.getContext().type);
