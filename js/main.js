@@ -6,7 +6,11 @@ function logOut() {}
 
 function closed() {}
 
-async function scanCode() {}
+async function scanCode() {
+  const result = await liff.scanCode();
+
+  document.getElementById("scanCode").append(result.value);
+}
 
 function openWindow() {
   liff.openWindow({
