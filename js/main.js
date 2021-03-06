@@ -15,7 +15,7 @@ async function getFriendship() {
   document.getElementById("friendship").append(friend.friendFlag);
 
   if (!friend.friendFlag) {
-    if (confirm("กรุณาเพื่อม Chat bot เป็นเพื่อนก่อนนะครับ")) {
+    if (confirm("กรุณาเพิ่ม Chat bot เป็นเพื่อนก่อนนะครับ")) {
       window.location = "https://line.me/R/ti/p/@429jicxz";
     }
   }
